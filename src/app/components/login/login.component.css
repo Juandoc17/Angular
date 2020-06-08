@@ -133,3 +133,6 @@
       color: #777;
     }
   }
+  label {
+    margin-left: 10px;
+  }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Employee } from '../../models/employee';
+import { Team } from '../../models/team';
 
 
 @Component({
@@ -8,30 +8,30 @@ import { Employee } from '../../models/employee';
   styleUrls: ['./equipos.component.css']
 })
 export class EquiposComponent {
-  employeeArray: Employee[] = [
-    { id: 1, name: "Elver", country: "USA" },
-    { id: 2, name: "Juan", country: "USA" },
-    { id: 3, name: "Valeria", country: "USA" },
+  teamArray: Team[] = [
+    { id: 1, name: "Barcelona", stadium: "USA" , webSite: "as", nationality: "as", fundationAge: new Date(1995,11,17), coach: "as", capacity: 3, value: 4},
+    { id: 2, name: "Real Madrid", stadium: "USA" , webSite: "", nationality: "", fundationAge: new Date(1995,11,17), coach: "", capacity: 3, value: 4},
+    { id: 3, name: "Boca", stadium: "USA" , webSite: "", nationality: "", fundationAge: new Date(1995,11,17), coach: "", capacity: 3, value: 4},
   ];
 
-  selectedEmployee: Employee = new Employee();
+  selectedTeam: Team = new Team();
 
-  openForEdit(employee: Employee) {
-    this.selectedEmployee = employee;
+  openForEdit(team: Team) {
+    this.selectedTeam = team;
   }
 
 
   addOrEdit() {
-    if (this.selectedEmployee.id === 0) {
-      this.selectedEmployee.id = this.employeeArray.length + 1;
-      this.employeeArray.push(this.selectedEmployee);
+    if (this.selectedTeam.id === 0) {
+      this.selectedTeam.id = this.teamArray.length + 1;
+      this.teamArray.push(this.selectedTeam);
     }
-    this.selectedEmployee = new Employee();
+    this.selectedTeam = new Team();
   }
   delete() {
-    if(confirm('Are you sure to delete this employee?')){
-      this.employeeArray =this.employeeArray.filter(x => x != this.selectedEmployee);
-      this.selectedEmployee = new Employee();
+    if(confirm('¿Estas seguro de eliminar este equipo?')){
+      this.teamArray =this.teamArray.filter(x => x != this.selectedTeam);
+      this.selectedTeam = new Team();
     }
   }
 }
