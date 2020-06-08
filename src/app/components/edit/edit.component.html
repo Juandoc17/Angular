@@ -1,36 +1,16 @@
 <nav class="navbar navbar-dark bg-primary">
     <a class="navbar-brand" href="/">
-    Equipos registrados
+    Edición de equipo
     </a>
   </nav>
   
   <div class="container">
     <div class="row">
       <div class="col-md-8 mt-4">
-          <ul class="list-group">
-            <li 
-              *ngFor="let team of teamArray"
-            class="list-group-item list-group-item-action"
-              (click)="openForEdit(team)"
-              [class.active]="team == selectedTeam"
-              >
-              <span class="badge badge-primary mr-4 ml-4" >{{team.id}}</span>{{team.name}}  - {{team.stadium}}
-              <button *ngIf="selectedTeam.id !==0"class="nav-link" [routerLink]="['/equipos/consultar']" class="btn btn-primary mr-4 ml-4">
-                Editar
-              </button>
-              <button 
-                *ngIf="selectedTeam.id !== 0"
-                class="btn btn-danger"
-                (click)="delete()"
-                >
-                Eliminar
-              </button>
-            </li>
-          </ul>
           <div class="card mt-4">
             <div class="card-body">
               <div class="card-title">
-                  <h3>Inserta un nuevo equipo</h3> 
+                  <h3>Edita tu equipo</h3> 
               </div>
               <div class="form-group">
                 <input type="text" [(ngModel)]="selectedTeam.name" placeholder="Inserta un nombre" class="form-control">
@@ -57,7 +37,12 @@
                 <input type="text" [(ngModel)]="selectedTeam.value" placeholder="Inserta el valor" class="form-control">
               </div>
               <button (click)="addOrEdit()" class="btn btn-primary mr-2">
-                Registrar
+                Editar
+              </button>
+              <button class="btn btn-danger"
+                (click)="delete()"
+                >
+                Eliminar
               </button>
             </div>
           </div>

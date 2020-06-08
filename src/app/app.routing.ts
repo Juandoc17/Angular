@@ -8,6 +8,7 @@ import {RegisterComponent} from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 //Definir las rutas
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
     {path: 'login', component: LoginComponent},    
     {path: 'register', component: RegisterComponent},
     {path: 'equipos/listar', component: EquiposComponent},
+    {path: 'equipos/consultar', component: EditComponent},
     {path: '**', component: ErrorComponent}
 ];
 

@@ -10,6 +10,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { EquiposComponent } from './components/equipos/equipos.component';
+import { EditComponent } from './components/edit/edit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { EquiposComponent } from './components/equipos/equipos.component';
     RegisterComponent,
     HomeComponent,
     ErrorComponent,
-    EquiposComponent
+    EquiposComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
